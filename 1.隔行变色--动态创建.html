@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        li {
+            list-style: none;
+        }
+    </style>
+</head>
+<body>
+<script>
+    var ul = document.createElement("ul");
+    document.body.appendChild(ul);
+    var count = 8;
+    for(var i=0;i<8;i++){
+        var li = document.createElement("li");
+        ul.appendChild(li);
+        li.innerText="我是第"+(i+1)+"个li的内容"
+        //判断奇偶行变色
+        if(i%2 === 0){
+            //偶数，奇数行
+            li.style.backgroundColor="pink";
+        }else{
+            li.style.backgroundColor="lightgray";
+        }
+        //鼠标放上去会高亮显示
+        var bg;
+        li.onmouseover=function(){
+            bg =this.style.backgroundColor;
+            this.style.backgroundColor="blue";
+        }
+        li.onmouseout=function(){
+            //bg是变量，不加引号！！！
+            this.style.backgroundColor=bg;
+        }
+    }
+</script>
+</body>
+</html>
